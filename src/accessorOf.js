@@ -1,19 +1,7 @@
-const onUnknown = key => new Proxy({}, {
-  get(_, name) {
-    switch (name) {
-      case 'or':
-        return initial => initial;
-      default:
-        return onUnknown(key);
-    }
-  },
-});
-
 const Processes = (target, name) => {
   const toUnknown = {
     when: () => typeof target === 'undefined',
-    next: () => onUnknown(name),
-    // next: () => accessorOf({ or: initial => initial }),
+    next: () => accessorOf({ or: value => value }),
   };
   const toReturn = {
     when: () => typeof target[name] === 'function' && (name === 'or'),
