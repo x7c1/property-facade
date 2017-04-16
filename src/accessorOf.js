@@ -1,7 +1,17 @@
+const empty = () => accessorOf({ or: value => value });
+
 const Processes = (target, name) => {
   const toUnknown = {
     when: () => typeof target === 'undefined',
-    next: () => accessorOf({ or: value => value }),
+    next: empty,
+  };
+  const toNull = {
+    when: () => target[name] === null,
+    next: empty,
+  };
+  const toUndefined = {
+    when: () => typeof target[name] === 'undefined',
+    next: empty,
   };
   const toReturn = {
     when: () => typeof target[name] === 'function' && (name === 'or'),
@@ -17,6 +27,8 @@ const Processes = (target, name) => {
   };
   const all = [
     toUnknown,
+    toNull,
+    toUndefined,
     toReturn,
     toObject,
     toDefault
