@@ -1,7 +1,7 @@
 {
   "name": "property-facade",
   "description": "Get a deep property from a nested object",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "author": "x7c1",
   "dependencies": {},
   "devDependencies": {
