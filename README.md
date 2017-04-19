@@ -41,19 +41,19 @@ Also `null` and `undefined` are ignored in the same way.
 
 ```js
 // no need to write lots of cumbersome undefined or null checks.
-const x0 = sample.a1.b4.or('foo0');
-expect(x0).to.equal('foo0');
+const x3 = sample.a1.b4.or('foo3');
+expect(x3).to.equal('foo3');
 
-const x0 = sample.a1.b5.or('foo0');
-expect(x0).to.equal('foo0');
+const x4 = sample.a1.b5.or('foo4');
+expect(x4).to.equal('foo4');
 ```
 
 It returns, of course, a target value if the path resolved.
 
 ```js
-const x1 = sample.a1.b1.c1.or('foo');
-expect(x1).to.equal(11);
+const x5 = sample.a1.b1.c1.or('foo5');
+expect(x5).to.equal(11);
 
-const x2 = sample.a1.b3[2].c2.or(null);
-expect(x2).to.equal(88);
+const x6 = sample.a1.b3[2].c2.or(null);
+expect(x6).to.equal(88);
 ```
