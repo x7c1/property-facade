@@ -31,8 +31,8 @@ You can get a given default value even if the target path not resolved.
 const x1 = sample.a1.abcde.b1.c1.or('foo1');
 expect(x1).to.equal('foo1');
 
-// b2[100] not exist
-const x2 = sample.a1.b2[100].or('foo2');
+// b3[100] not exist
+const x2 = sample.a1.b3[100].or('foo2');
 expect(x2).to.equal('foo2');
 
 ```
